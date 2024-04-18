@@ -1,4 +1,5 @@
-package controller;
+package com.example.myCRUD.controller;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.Employee;
-import repo.EmployeeRepo;
+import com.example.myCRUD.model.Employee;
+import com.example.myCRUD.repo.EmployeeRepo;
 
 
 @RestController
