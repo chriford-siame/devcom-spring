@@ -23,8 +23,8 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepo employeeRepo;
 
-    @GetMapping("/books")
-    public ResponseEntity<List<Employee>> getAllBooks() {
+    @GetMapping("/employees")
+    public ResponseEntity<List<Employee>> getAllEmployees() {
         try {
             List<Employee> employees = new ArrayList<>();
             employeeRepo.findAll().forEach(employees::add);
@@ -38,7 +38,7 @@ public class EmployeeController {
         }
     }
 
-    @GetMapping("/books/get/{id}")
+    @GetMapping("/employees/get/{id}")
     public ResponseEntity<Employee> getBookById(@PathVariable Long id) {
         Optional<Employee> employee = employeeRepo.findById(id);
 
@@ -48,13 +48,13 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PostMapping("/books/add")
+    @PostMapping("/employees/add")
     public ResponseEntity<Employee> addBook(@RequestBody Employee employee) {
         Employee employeeObj = employeeRepo.save(employee);
         return new ResponseEntity<>(employeeObj, HttpStatus.OK);
     }
     
-    @PostMapping("/books/edit/{id}")
+    @PostMapping("/employees/edit/{id}")
     public ResponseEntity<Employee> updateBookById(@PathVariable Long id, @RequestBody Employee newEmployeeData) {
         Optional<Employee> currentEmployeeData = employeeRepo.findById(id);
         if (currentEmployeeData.isPresent()) {
@@ -68,7 +68,7 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @DeleteMapping("/books/delete/{id}")
+    @DeleteMapping("/employees/delete/{id}")
     public ResponseEntity<HttpStatus> deleteBookById(@PathVariable Long id) {
         employeeRepo.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
