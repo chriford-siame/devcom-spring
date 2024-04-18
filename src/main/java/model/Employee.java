@@ -12,8 +12,8 @@ import jakarta.persistence.*;
 // @ToString
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -21,20 +21,16 @@ public class Employee {
     @Column(name = "salary")
     private float salary;
 
-    public Employee() {
+    public Employee() {}
 
-    }
     public Employee(String name, float salary) {
         super();
         this.name = name;
         this.salary = salary;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
     public String getName() {
         return name;
@@ -42,7 +38,14 @@ public class Employee {
     public float getSalary() {
         return salary;
     }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
     public void setSalary(float salary) {
         this.salary = salary;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 }
