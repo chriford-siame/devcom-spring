@@ -8,7 +8,6 @@ import com.example.myCRUD.controller.*;
 import com.example.myCRUD.model.*;
 
 @SpringBootApplication
-// @ComponentScan(basePackages = "controller,"+"repo,"+"model")
 public class MyCrudApplication {
 
 	public static void main(String[] args) {
