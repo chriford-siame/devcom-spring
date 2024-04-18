@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Employee")
-// @NoArgsContrustor
-// @AllArgsContrustor
+// @NoArgsConstructor
+// @AllArgsConstructor
 // @Setter
 // @Getter
 // @ToString
@@ -38,7 +38,7 @@ public class Employee {
     public float getSalary() {
         return salary;
     }
-    
+
     public void setId(Long id) {
         this.id = id;
     }
