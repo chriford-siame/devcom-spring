@@ -31,10 +31,11 @@ public class EmployeeController {
             employeeRepo.findAll().forEach(employees::add);
             
             if (employees.isEmpty()) {
-                return new ResponseEntity<>(employees, HttpStatus.OK);
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(employees, HttpStatus.OK);
         } catch (Exception ex) {
+            System.out.println(ex);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
