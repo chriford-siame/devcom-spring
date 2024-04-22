@@ -3,13 +3,11 @@ package com.example.myCRUD.model;
 import lombok.*;
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "Employee")
+// @Data
 // @NoArgsConstructor
 // @AllArgsConstructor
-// @Setter
-// @Getter
-// @ToString
+@Entity
+@Table(name = "Employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
